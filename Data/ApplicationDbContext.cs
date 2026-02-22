@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using BookSwap.Models; 
 
 namespace BookSwap.Data
 {
@@ -9,5 +10,7 @@ namespace BookSwap.Data
             : base(options)
         {
         }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Book> Books { get; set; }
     }
 }
