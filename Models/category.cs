@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace BookSwap.Models   
+namespace BookSwap.Models
 {
     public class Category
     {
         public int CategoryId { get; set; }
 
-        
         [Required]
-        [StringLength(50)]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; set; }
 
-        [StringLength(200)]
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-
-        public List<Book> Books { get; set; } = new List<Book>();
+        public List<Book>? Books { get; set; }
     }
 }

@@ -1,16 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using BookSwap.Models; 
+﻿using Microsoft.EntityFrameworkCore;
+using BookSwap.Models;
 
 namespace BookSwap.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+
         public DbSet<Category> Categories { get; set; }
+
         public DbSet<Book> Books { get; set; }
     }
 }

@@ -1,27 +1,23 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BookSwap.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BookSwap.Models   
+namespace BookSwap.Models
 {
     public class Book
     {
         public int BookId { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string Title { get; set; } = string.Empty;
+        public string Title { get; set; }
 
-        [Required]
-        [StringLength(60)]
-        public string Author { get; set; } = string.Empty;
+        public string Author { get; set; }
 
-        [Required]
-        [StringLength(20)]
-        public string Condition { get; set; } = "Good";
-
-        public bool IsAvailable { get; set; } = true;
+        public string Condition { get; set; }
 
         public int CategoryId { get; set; }
 
+        [ForeignKey("CategoryId")]
         public Category? Category { get; set; }
     }
 }
